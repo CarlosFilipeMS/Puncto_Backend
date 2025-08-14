@@ -1,9 +1,15 @@
-# app/database.py
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
+import os
+from dotenv import load_dotenv
 
-#Tirar de hardcode a SENHA
-DATABASE_URL = "postgresql://postgres.fqyiydpzvsiqbnguhern:fXwpSkDBGIAMa04@aws-0-us-east-1.pooler.supabase.com:6543/postgres"
+# Carrega variáveis do .env
+load_dotenv()
+
+DATABASE_URL = os.getenv("DATABASE_URL")
+
+if not DATABASE_URL:
+    raise ValueError("DATABASE_URL não definida no .env")
 
 # Cria engine
 engine = create_engine(DATABASE_URL)
