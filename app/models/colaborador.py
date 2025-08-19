@@ -12,7 +12,7 @@ class Colaborador(Base):
     nome = Column(String, nullable=False)
     cpf = Column(String, unique=True, index=True, nullable=False)
     cargo = Column(String, nullable=False)
-    jornada_padrao = Column(Integer, nullable=True) # Hora por semana
+    jornada_padrao = Column(String, nullable=True) # Hora por semana
     horario_personalizado = Column(String, nullable=True)
     senha_hash = Column(String, nullable=True)
 

@@ -17,3 +17,8 @@ class EmpresaResponseDTO(BaseModel):
 
     class Config:
         orm_mode = True
+
+# DTO para login de empresa
+class EmpresaLoginDTO(BaseModel):
+    cnpj: str
+    senha: str

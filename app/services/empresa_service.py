@@ -42,3 +42,12 @@ def atualizar_empresa_service(empresa_id: UUID, dto: EmpresaCreateDTO, atualizar
     if not empresa:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Empresa não encontrada")
     return empresa
+
+def buscar_empresa_por_cnpj_service(session: Session, cnpj: str):
+    empresa = buscar_por_cnpj(session, cnpj)
+    if not empresa:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Empresa não encontrada"
+        )
+    return empresa
