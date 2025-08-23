@@ -4,7 +4,7 @@ from sqlalchemy.dialects.postgresql import UUID
 from sqlalchemy.orm import relationship
 from app.database import Base
 from app.roles import Role
-from app.status import Status  # ✅ importando o enum de status
+from app.status import Status
 
 class Colaborador(Base):
     __tablename__ = "colaboradores"
@@ -13,8 +13,6 @@ class Colaborador(Base):
     nome = Column(String, nullable=False)
     cpf = Column(String, unique=True, index=True, nullable=False)
     cargo = Column(String, nullable=False)
-    jornada_padrao = Column(String, nullable=True)  # Horas por semana
-    horario_personalizado = Column(String, nullable=True)
     senha_hash = Column(String, nullable=True)
 
     # Permissões e status
@@ -24,3 +22,7 @@ class Colaborador(Base):
     # Relação com a empresa
     empresa_id = Column(UUID(as_uuid=True), ForeignKey("empresas.id"), nullable=False)
     empresa = relationship("Empresa", back_populates="colaboradores")
+
+    # Relação com jornada
+    jornada_id = Column(UUID(as_uuid=True), ForeignKey("jornadas.id"), nullable=True)
+    jornada = relationship("Jornada", back_populates="colaboradores")

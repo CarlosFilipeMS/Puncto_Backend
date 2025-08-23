@@ -28,6 +28,12 @@ class ColaboradorResponseDTO(BaseModel):
     class Config:
         orm_mode = True
 
+class ColaboradorUpdateDTO(BaseModel):
+    nome: str | None = None
+    cargo: str | None = None
+    jornada_id: UUID | None = None
+    senha: str | None = None
+
 # DTO para atualizar status ou role
 class ColaboradorUpdateStatusRoleDTO(BaseModel):
     status: Status | None = None

@@ -10,8 +10,7 @@ def salvar_colaborador(dto: ColaboradorCreateDTO, senha_hash: str, session: Sess
         cpf=dto.cpf,
         cargo=dto.cargo,
         empresa_id=dto.empresa_id,
-        jornada_padrao=dto.jornada_padrao,
-        horario_personalizado=dto.horario_personalizado,
+        jornada_id=dto.jornada_id,  # <-- substituindo jornada_padrao/hora_personalizada
         senha_hash=senha_hash
     )
     session.add(colaborador)
@@ -39,8 +38,11 @@ def buscar_por_id_e_empresa(session: Session, id: UUID, empresa_id: UUID):
 def buscar_por_cpf(session: Session, cpf: str):
     return session.query(Colaborador).filter(Colaborador.cpf == cpf).first()
 
-def buscar_por_nome(session: Session, nome: str):
-    return session.query(Colaborador).filter(Colaborador.nome.ilike(f"%{nome}%")).all()
+def buscar_por_nome(session: Session, nome: str, empresa_id: UUID = None):
+    query = session.query(Colaborador).filter(Colaborador.nome.ilike(f"%{nome}%"))
+    if empresa_id:
+        query = query.filter(Colaborador.empresa_id == empresa_id)
+    return query.all()
 
 def atualizar_status_e_role_colaborador(session: Session, colaborador_id: UUID, status: Status | None = None, role: Role | None = None):
     colaborador = session.query(Colaborador).filter(Colaborador.id == colaborador_id).first()

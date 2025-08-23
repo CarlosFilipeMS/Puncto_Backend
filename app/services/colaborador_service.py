@@ -1,7 +1,7 @@
 from sqlalchemy.orm import Session
 from uuid import UUID
 from fastapi import HTTPException, status
-from app.schemas.colaborador_schema import ColaboradorCreateDTO
+from app.schemas.colaborador_schema import ColaboradorCreateDTO, ColaboradorUpdateDTO
 from app.utils.security import gerar_hash_senha
 from app.repositories.colaborador_repository import (
     salvar_colaborador,
@@ -29,44 +29,42 @@ def listar_colaboradores_ativos_service(session: Session, empresa_id: UUID):
     return listar_todos_ativos(session, empresa_id)
 
 # Buscar por ID e empresa
-def buscar_por_id_service(session: Session, id: UUID, empresa_id: UUID):
-    colaborador = buscar_por_id_e_empresa(session, id, empresa_id)
+def buscar_por_id_service(session: Session, colaborador_id: UUID, empresa_id: UUID):
+    colaborador = buscar_por_id_e_empresa(session, colaborador_id, empresa_id)
     if not colaborador:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Colaborador não encontrado")
     return colaborador
 
 # Buscar por CPF
-def buscar_por_cpf_service(session: Session, cpf: str):
-    colaborador = buscar_por_cpf(session, cpf)
+def buscar_por_cpf_service(session: Session, cpf: str, empresa_id: UUID):
+    colaborador = buscar_por_cpf(session, cpf, empresa_id)
     if not colaborador:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Colaborador não encontrado")
     return colaborador
 
 # Buscar por nome
-def buscar_por_nome_service(session: Session, nome: str):
-    colaboradores = buscar_por_nome(session, nome)
+def buscar_por_nome_service(session: Session, nome: str, empresa_id: UUID):
+    colaboradores = buscar_por_nome(session, nome, empresa_id)
     if not colaboradores:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Nenhum colaborador encontrado com esse nome")
     return colaboradores
 
 # Atualizar dados do colaborador (exceto status e role)
-def atualizar_colaborador_service(session: Session, colaborador_id: UUID, dto: ColaboradorCreateDTO, atualizar_senha: bool = False):
-    colaborador = buscar_por_id_e_empresa(session, colaborador_id, dto.empresa_id)
+def atualizar_colaborador_service(session: Session, colaborador_id: UUID, dto: ColaboradorUpdateDTO):
+    # Busca o colaborador
+    colaborador = buscar_por_id_e_empresa(session, colaborador_id, getattr(dto, "empresa_id", None))
     if not colaborador:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Colaborador não encontrado")
 
-    if atualizar_senha:
-        senha_hash = gerar_hash_senha(dto.senha)
-    else:
-        senha_hash = None
-
-    # Atualiza campos básicos
-    colaborador.nome = dto.nome
-    colaborador.cargo = dto.cargo
-    colaborador.jornada_padrao = dto.jornada_padrao
-    colaborador.horario_personalizado = dto.horario_personalizado
-    if senha_hash:
-        colaborador.senha_hash = senha_hash
+    # Atualização parcial
+    if dto.nome is not None:
+        colaborador.nome = dto.nome
+    if dto.cargo is not None:
+        colaborador.cargo = dto.cargo
+    if getattr(dto, "jornada_id", None) is not None:
+        colaborador.jornada_id = dto.jornada_id
+    if dto.senha is not None:
+        colaborador.senha_hash = gerar_hash_senha(dto.senha)
 
     session.commit()
     session.refresh(colaborador)
