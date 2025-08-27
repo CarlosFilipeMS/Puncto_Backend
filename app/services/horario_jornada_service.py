@@ -3,19 +3,20 @@ from uuid import UUID
 from fastapi import HTTPException, status
 from app.models.jornada import Jornada, HorarioJornada
 from app.repositories.jornada_repository import salvar_horario, deletar_horario
+from app.schemas.jornada_schema import HorarioJornadaCreateDTO, HorarioJornadaUpdateDTO
 
 # Criar horário de jornada
-def criar_horario_service(session: Session, jornada_id: UUID, dto: "HorarioJornadaCreateDTO"):
-    # Verifica se a jornada existe
-    jornada = session.query(Jornada).filter(Jornada.id == jornada_id).first()
-    if not jornada:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Jornada não encontrada")
+def criar_horario_service(session: Session, jornada_id: UUID, dto: HorarioJornadaCreateDTO, jornada: Jornada = None):
+    if jornada is None:
+        jornada = session.query(Jornada).filter(Jornada.id == jornada_id).first()
+        if not jornada:
+            raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Jornada não encontrada")
 
     horario = HorarioJornada(
         dia_semana=dto.dia_semana,
         hora_inicio=dto.hora_inicio,
         hora_fim=dto.hora_fim,
-        jornada_id=jornada_id
+        jornada=jornada
     )
     return salvar_horario(session, horario)
 
@@ -27,7 +28,7 @@ def listar_horarios_service(session: Session, jornada_id: UUID):
     return jornada.horarios
 
 # Atualizar horário
-def atualizar_horario_service(session: Session, horario_id: UUID, dto: "HorarioJornadaUpdateDTO"):
+def atualizar_horario_service(session: Session, horario_id: UUID, dto: HorarioJornadaUpdateDTO):
     horario = session.query(HorarioJornada).filter(HorarioJornada.id == horario_id).first()
     if not horario:
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="Horário não encontrado")

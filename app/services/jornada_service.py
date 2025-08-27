@@ -6,11 +6,10 @@ from app.repositories.jornada_repository import (
     salvar_jornada,
     listar_todas_jornadas,
     buscar_jornada_por_id,
-    deletar_jornada,
-    salvar_horario,
-    deletar_horario
+    deletar_jornada
 )
 from app.schemas.jornada_schema import JornadaCreateDTO, JornadaUpdateDTO
+from app.services.horario_jornada_service import criar_horario_service, deletar_horario_service
 
 # Criar jornada com horários
 def criar_jornada_service(dto: JornadaCreateDTO, session: Session):
@@ -20,14 +19,9 @@ def criar_jornada_service(dto: JornadaCreateDTO, session: Session):
         empresa_id=dto.empresa_id
     )
 
-    # Criar horários
+    # Criar horários usando service separado
     for h in dto.horarios:
-        horario = HorarioJornada(
-            dia_semana=h.dia_semana,
-            hora_inicio=h.hora_inicio,
-            hora_fim=h.hora_fim
-        )
-        jornada.horarios.append(horario)
+        criar_horario_service(session, jornada_id=None, dto=h, jornada=jornada)
 
     return salvar_jornada(session, jornada)
 
@@ -55,19 +49,14 @@ def atualizar_jornada_service(session: Session, jornada_id: UUID, dto: JornadaUp
 
     # Atualizar horários
     if dto.horarios is not None:
-        # Deletar antigos
+        # Deletar horários antigos
         for h in jornada.horarios:
-            deletar_horario(session, h)
+            deletar_horario_service(session, h.id)
         jornada.horarios.clear()
 
-        # Adicionar novos
+        # Adicionar novos horários
         for h in dto.horarios:
-            horario = HorarioJornada(
-                dia_semana=h.dia_semana,
-                hora_inicio=h.hora_inicio,
-                hora_fim=h.hora_fim
-            )
-            jornada.horarios.append(horario)
+            criar_horario_service(session, jornada_id=jornada.id, dto=h)
 
     session.commit()
     session.refresh(jornada)
