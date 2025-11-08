@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="3a5d4673-2403-4622-9ae4-87c89a63286f" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../.idea/Projetos.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../EstudoKotlinSpring/mvpconsultaapi/.idea/mvpconsultaapi.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PunctoFastAPI/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PunctoFastAPI/.idea/PunctoFastAPI.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PunctoFastAPI/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PunctoFastAPI/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PunctoFastAPI/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../PunctoFastAPI/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.dockerignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/versions/49b9e6a1d2e9_mover_unique_cpf_de_empresa_para_.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/versions/bbd4db90013f_add_email_and_jornada_id_to_colaborador.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/versions/bdd6226f6b2d_ajusta_unique_cpf_para_cpf_empresa_id.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/alembic/versions/c0b1607c407e_create_tables.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/dependencies/dependencies_auth.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/.idea/GerenciadorUsuarioApp.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/.idea/kotlinc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/GerenciadorUsuarioApp/src/main/kotlin/br/com/carlosfilipe/GerenciadorUsuarioApp/controller/UsuarioController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/GerenciadorUsuarioApp/src/main/kotlin/br/com/carlosfilipe/GerenciadorUsuarioApp/model/Usuario.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/GerenciadorUsuarioApp/src/main/kotlin/br/com/carlosfilipe/GerenciadorUsuarioApp/repository/UsuarioRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/GerenciadorUsuarioApp/src/main/resources/templates/formulario-cadastro.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/GerenciadorUsuarioApp/src/main/resources/templates/formulario-edicao.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/GerenciadorUsuarioApp/GerenciadorUsuarioApp/src/main/resources/templates/home.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/hamburgeria/hamburgeria/src/main/kotlin/com/carlos/hamburgeria/controller/AlimentoController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/hamburgeria/hamburgeria/src/main/kotlin/com/carlos/hamburgeria/controller/Dto/AlimentoDto.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/hamburgeria/hamburgeria/src/main/kotlin/com/carlos/hamburgeria/controller/HomeController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/hamburgeria/hamburgeria/src/main/kotlin/com/carlos/hamburgeria/domain/Alimento.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/hamburgeria/hamburgeria/src/main/kotlin/com/carlos/hamburgeria/exception/GlobalExceptionHandler.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/hamburgeria/hamburgeria/src/main/kotlin/com/carlos/hamburgeria/exception/MensagemException.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/hamburgeria/hamburgeria/src/main/kotlin/com/carlos/hamburgeria/repository/AlimentoRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/hamburgeria/hamburgeria/src/main/kotlin/com/carlos/hamburgeria/repository/AlimentoRepositoryEmMemoria.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../EstudoKotlinSpring/hamburgeria/hamburgeria/src/main/kotlin/com/carlos/hamburgeria/service/AlimentoService.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/alembic.ini" beforeDir="false" afterPath="$PROJECT_DIR$/alembic.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/colaborador.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/colaborador.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/repositories/colaborador_repository.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/repositories/colaborador_repository.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/auth/colaborador_auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/auth/colaborador_auth_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/auth/empresa_auth_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/auth/empresa_auth_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/colaborador_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/colaborador_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/routes/empresa_routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/empresa_routes.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/schemas/colaborador_schema.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/schemas/colaborador_schema.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/colaborador_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/colaborador_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/services/empresa_service.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/services/empresa_service.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/utils/jwt.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/utils/jwt.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requiriments.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="DONT_SYNC" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="30mKN86ncpqlofSj8oCzTkUx8nZ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "git-widget-placeholder": "main",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Carlos\Desktop\datak\Projetos\Puncto_Backend\app\routes\auth" />
+      <recent name="C:\Users\Carlos\Desktop\datak\Projetos\Puncto_Backend\app" />
+      <recent name="C:\Users\Carlos\Desktop\datak\Projetos\Puncto_Backend\dependencies" />
+    </key>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-4c141bd692a7-e2d783800521-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-251.26927.90" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3a5d4673-2403-4622-9ae4-87c89a63286f" name="Changes" comment="" />
+      <created>1754227265392</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1754227265392</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

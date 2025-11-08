@@ -21,3 +21,6 @@ class Empresa(Base):
 
     # Relação com colaboradores
     colaboradores = relationship("Colaborador", back_populates="empresa", cascade="all, delete-orphan")
+
+    # Relação com jornadas
+    jornadas = relationship("Jornada", back_populates="empresa", cascade="all, delete-orphan")

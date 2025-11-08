@@ -1,0 +1,54 @@
+# --- Ambiente virtual ---
+venv/
+.env
+*.env
+
+# --- Cache do Python ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pdb
+*.egg-info/
+*.egg
+
+# --- Logs e temporários ---
+*.log
+*.pot
+*.pyc
+*.tmp
+*.bak
+*.swp
+*.DS_Store
+
+# --- Configurações do editor ---
+.vscode/
+.idea/
+*.code-workspace
+
+# --- Banco de dados local ---
+*.db
+*.sqlite3
+
+# --- Docker ---
+# Volumes e arquivos temporários gerados
+**/docker-data/
+**/data/
+**/tmp/
+
+# --- Alembic ---
+# (Mantém as migrações, mas ignora caches)
+alembic/__pycache__/
+
+# --- Testes ---
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+
+# --- Outros ---
+# Arquivos gerados por builds ou deploys
+dist/
+build/
