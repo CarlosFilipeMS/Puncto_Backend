@@ -5,6 +5,7 @@ venv/
 
 # --- Cache do Python ---
 __pycache__/
+**/__pycache__/
 *.py[cod]
 *.pyo
 *.pyd
@@ -15,7 +16,6 @@ __pycache__/
 # --- Logs e temporários ---
 *.log
 *.pot
-*.pyc
 *.tmp
 *.bak
 *.swp
@@ -37,7 +37,7 @@ __pycache__/
 **/tmp/
 
 # --- Alembic ---
-# (Mantém as migrações, mas ignora caches)
+# Mantém as migrações, mas ignora caches
 alembic/__pycache__/
 
 # --- Testes ---
